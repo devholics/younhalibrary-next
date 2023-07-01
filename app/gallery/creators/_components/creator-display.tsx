@@ -16,7 +16,7 @@ function SmallProfile({ creator }: {
             <Link href={`/gallery/creators/${creator.id}`}>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-600 to-30% px-3 py-2 flex flex-col justify-end text-white">
                     <span>{ creator.name }</span>
-                    <span className="text-xs">{ creator.photo_count ? `사진 ${ creator.photo_count.toLocaleString() }장` : '' }</span>
+                    <span className="text-xs">{ creator.num_photos ? `사진 ${ creator.num_photos.toLocaleString() }장` : '' }</span>
                 </div>
             </Link>
         </div>

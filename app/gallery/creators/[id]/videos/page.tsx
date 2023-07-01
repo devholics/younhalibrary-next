@@ -19,7 +19,7 @@ export default async function CreatorVideoGallery({ params }: {
         <div className="2xl:container px-6 mx-auto mt-6">
             <div className="flex my-3">
                 <div className="flex text-slate-500 dark:text-slate-400 me-auto gap-2">
-                    <NavLink href={path}><span className="font-semibold">사진</span> { creator.photo_count.toLocaleString() }</NavLink>
+                    <NavLink href={path}><span className="font-semibold">사진</span> { creator.num_photos.toLocaleString() }</NavLink>
                     <NavLink href={`${path}/videos`} selected><span className="font-semibold">영상</span> { creator.video_count.toLocaleString() }</NavLink>
                 </div>
             </div>
