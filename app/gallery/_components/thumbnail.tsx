@@ -4,13 +4,14 @@ import { LinkIcon } from '@heroicons/react/20/solid'
 import React from "react";
 
 import CreatorProfile from './creator-profile'
+import ThumbnailImage from './thumbnail-image'
 
 export default function Thumbnail({ photo }: {
     photo: any
 }) {
     return (
         <div className="relative mb-4">
-            <img src={photo.thumbnail_url || photo.url} alt="photo" />
+            <ThumbnailImage photo={photo} />
             <div className="opacity-0 hover:opacity-100 ease-in-out duration-150 text-slate-300">
                 <Link href={`/gallery/photos/${photo.id}`}>
                     <div className="absolute inset-0 bg-slate-800/50"></div>

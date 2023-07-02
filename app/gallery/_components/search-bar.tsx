@@ -6,7 +6,7 @@ export default function SearchBar({ placeholder = '', value = '' }: {
 }) {
     return (
         <>
-            <input type="text" name="q" placeholder={placeholder} defaultValue={value} className="h-full w-full outline-0 appearance-none bg-inherit focus:border-0" />
+            <input type="text" name="q" placeholder={placeholder} defaultValue={value} autoComplete="off" className="h-full w-full outline-0 appearance-none bg-inherit focus:border-0" />
             <button type="submit">
                 <MagnifyingGlassIcon className="h-1/2 inline-block my-auto -me-1" />
             </button>
