@@ -7,6 +7,15 @@ const nextConfig = {
                 hostname: "**.daumcdn.net"
             }
         ]
+    },
+    async redirects() {
+        return [
+            {
+                source: '/gallery',
+                destination: '/gallery/photos',
+                permanent: false,
+            }
+        ]
     }
 }
 
