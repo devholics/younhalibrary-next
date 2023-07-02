@@ -9,9 +9,9 @@ export function NavigationEvents() {
     const searchParams = useSearchParams()
 
     useEffect(() => {
-        const path = pathname + searchParams.toString()
-        console.log(path)
-        gtm.pageview(path)
+        const url = `${pathname}?${searchParams}`
+        console.log(url)
+        gtm.pageview(url)
     }, [pathname, searchParams])
 
     return null
