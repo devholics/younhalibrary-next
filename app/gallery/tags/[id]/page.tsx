@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import React from "react";
 import PhotoBoard from "@/app/gallery/_components/photo-board";
 
 import { getTagDetail } from '../../_lib/api'
@@ -23,7 +23,10 @@ export default async function TagPhotoGallery({ params, searchParams }: {
     }
 }) {
     const path = `/gallery/tags/${params.id}`
+    const order = searchParams.order
+    const page = searchParams.page
     const tag = await getTagDetail(params.id)
+    const boardId = `tag-${tag.id}-${order || 'default'}-${page || 1}`
 
     return (
         <div className="2xl:container px-6 mx-auto mt-6">
@@ -34,7 +37,7 @@ export default async function TagPhotoGallery({ params, searchParams }: {
                 </div>
                 <OrderingMenu path={path} current={searchParams.order} />
             </div>
-            <PhotoBoard path={path} page={searchParams.page} order={searchParams.order} tags={[tag.id]} />
+            <PhotoBoard id={boardId} path={path} page={searchParams.page} order={searchParams.order} tags={[tag.id]} />
         </div>
     )
 }

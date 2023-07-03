@@ -12,11 +12,7 @@ export default function Banner() {
                 <div className="text-white w-10/12 md:w-4/6 lg:w-1/2">
                     <h1 className="font-bold mb-2">갤러리</h1>
                     <p className="mb-2">갤러리에서 원하는 사진을 찾아보세요.</p>
-                    <form method="get" action="/gallery/search">
-                        <div className="flex bg-slate-200 text-slate-800 w-full h-12 rounded-xl px-4 outline outline-0 outline-offset-1 outline-slate-300 focus-within:outline-1">
-                            <SearchBar placeholder="연말콘" />
-                        </div>
-                    </form>
+                    <SearchBar placeholder="연말콘" className="flex bg-slate-200 text-slate-800 w-full h-12 rounded-xl px-4 outline outline-0 outline-offset-1 outline-slate-300 focus-within:outline-1" />
                 </div>
             </div>
             <div className="absolute text-slate-500 text-xs bottom-2 left-2">

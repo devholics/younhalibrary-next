@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getCreatorDetail } from '../../_lib/api'
 
 import PhotoBoard from "@/app/gallery/_components/photo-board";
-import React, {Suspense} from "react";
+import React from "react";
 import OrderingMenu from "@/app/gallery/_components/ordering-menu";
 import NavLink from "@/app/gallery/_components/nav-link";
 
@@ -16,8 +16,12 @@ export default async function CreatorPhotoGallery({ params, searchParams }: {
         order?: string
     }
 }) {
-    const path = `/gallery/creators/${params.id}`
-    const creator = await getCreatorDetail(params.id)
+    const creatorId = params.id
+    const page = searchParams.page
+    const order = searchParams.order
+    const path = `/gallery/creators/${creatorId}`
+    const creator = await getCreatorDetail(creatorId)
+    const boardId = `creator-${creator.id}-${order || 'default'}-${page || 1}`
 
     if (!creator) {
         notFound()
@@ -30,9 +34,9 @@ export default async function CreatorPhotoGallery({ params, searchParams }: {
                     <NavLink href={path} selected><span className="font-semibold">사진</span> { creator.num_photos.toLocaleString() }</NavLink>
                     <NavLink href={`${path}/videos`}><span className="font-semibold">영상</span> { creator.num_videos.toLocaleString() }</NavLink>
                 </div>
-                <OrderingMenu path={path} current={searchParams.order} />
+                <OrderingMenu path={path} current={order} />
             </div>
-            <PhotoBoard path={path} page={searchParams.page} order={searchParams.order} creatorId={creator.id} />
+            <PhotoBoard id={boardId} path={path} page={page} order={order} creatorId={creator.id} />
         </div>
     )
 }

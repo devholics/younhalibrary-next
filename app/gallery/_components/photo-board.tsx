@@ -9,9 +9,14 @@ function PhotoDisplayLoading() {
     )
 }
 
-export default function PhotoBoard(props: PhotoDisplayProps) {
+interface PhotoBoardProps extends PhotoDisplayProps {
+    id: string
+}
+
+export default function PhotoBoard({ id, ...props }: PhotoBoardProps) {
     return (
-        <Suspense key={`${props.order}-${props.page}`} fallback={<PhotoDisplayLoading />}>
+        // Reset Suspense boundary on navigation; otherwise severe CLS occurs
+        <Suspense key={id} fallback={<PhotoDisplayLoading />}>
             <PhotoDisplay {...props} />
         </Suspense>
     )
