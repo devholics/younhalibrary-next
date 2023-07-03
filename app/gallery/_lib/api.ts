@@ -36,7 +36,7 @@ export async function getPhotoList(
     for (const tag of (filter.tags || [])) {
         setParams("tags", tag)
     }
-    const res = await fetchData(`/photos/?${params.toString()}`, {
+    const res = await fetchData(`/photos/?${params}`, {
         next: {
             revalidate: 60
         }
@@ -64,7 +64,7 @@ export async function getCreatorList(page?: string) {
     if (page) {
         params.set('page', page)
     }
-    const res = await fetchData(`/creators/?${params.toString()}`, {
+    const res = await fetchData(`/creators/?${params}`, {
         next: {
             revalidate: 60
         }

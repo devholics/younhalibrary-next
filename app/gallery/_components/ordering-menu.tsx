@@ -48,7 +48,7 @@ export default function OrderingMenu({ path, params, current }: {
                                     className={`${
                                         active ? 'bg-sky-500 dark:bg-sky-700 text-white' : 'text-gray-900 dark:text-slate-300'
                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                    href={`${path}?${dateDescParams.toString()}`}
+                                    href={`${path}?${dateDescParams}`}
                                 >
                                     최신순
                                 </Link>
@@ -60,7 +60,7 @@ export default function OrderingMenu({ path, params, current }: {
                                     className={`${
                                         active ? 'bg-sky-500 dark:bg-sky-700 text-white' : 'text-gray-900 dark:text-slate-300'
                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                    href={`${path}?${dateAscParams.toString()}`}
+                                    href={`${path}?${dateAscParams}`}
                                 >
                                     과거순
                                 </Link>

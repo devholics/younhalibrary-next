@@ -49,7 +49,7 @@ export default async function PhotoDisplay({ path, params, page, order, ...filte
             <div className="flex justify-center mt-4">
                 { photoList.previous ?
                     <Link
-                        href={`${path}?${previousPageParams.toString()}`}
+                        href={`${path}?${previousPageParams}`}
                         className="h-10 w-10 rounded-full hover:bg-slate-300/20 inline-flex items-center justify-center"
                     >
                         <ChevronLeftIcon className="h-4 w-4" />
@@ -61,7 +61,7 @@ export default async function PhotoDisplay({ path, params, page, order, ...filte
                 </p>
                 { photoList.next ?
                     <Link
-                        href={`${path}?${nextPageParams.toString()}`}
+                        href={`${path}?${nextPageParams}`}
                         className="h-10 w-10 rounded-full hover:bg-slate-300/20 inline-flex items-center justify-center"
                     >
                         <ChevronRightIcon className="h-4 w-4" />
