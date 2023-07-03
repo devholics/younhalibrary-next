@@ -2,7 +2,7 @@ import { PhotoFilter } from '../_lib/api'
 import Navbar from "@/app/gallery/_components/navbar";
 import OrderingMenu from "@/app/gallery/_components/ordering-menu";
 import React, {Suspense} from "react";
-import PhotoDisplay from "@/app/gallery/_components/photo-display";
+import PhotoBoard from "@/app/gallery/_components/photo-board";
 import NavLink from "@/app/gallery/_components/nav-link";
 
 import SearchBar from '../_components/search-bar'
@@ -32,9 +32,7 @@ export default function GallerySearch({ searchParams }: {
                 <div className="flex justify-end my-3">
                     <OrderingMenu path={path} params={{q: query}} current={searchParams.order} />
                 </div>
-                <Suspense fallback={<PhotoDisplayLoading />}>
-                    <PhotoDisplay path={path} params={{q: query}} page={searchParams.page} order={searchParams.order} {...filter} />
-                </Suspense>
+                <PhotoBoard path={path} params={{q: query}} page={searchParams.page} order={searchParams.order} {...filter} />
             </div>
         </main>
     )
@@ -61,12 +59,4 @@ function parseQuery(query: string) {
     }
     filter.search = searchTokens.join(' ')
     return filter
-}
-
-function PhotoDisplayLoading() {
-    return (
-        <div className="text-center py-12">
-            <h3>불러오는 중...</h3>
-        </div>
-    )
 }

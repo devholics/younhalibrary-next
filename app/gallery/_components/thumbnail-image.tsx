@@ -21,16 +21,18 @@ const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
     return src
 }
 
-export default function ThumbnailImage({ photo }: {
-    photo: any
+export default function ThumbnailImage({ src, width, height }: {
+    src: string,
+    width: number,
+    height: number
 }) {
     return (
         <Image
             loader={imageLoader}
-            src={photo.url}
+            src={src}
             alt="Photo"
-            width={photo.width || 0}
-            height={photo.height || 0}
+            width={width}
+            height={height}
             sizes="(min-width: 1280px) calc(calc(100vw - 96px) / 4),
                    (min-width: 768px) calc(calc(100vw - 80px) / 3),
                    (min-width: 640px) calc(calc(100vw - 64px) / 2),

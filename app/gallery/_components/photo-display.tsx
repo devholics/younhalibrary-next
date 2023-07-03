@@ -12,7 +12,7 @@ function getOrdering(order?: string) {
     return ""
 }
 
-interface PhotoDisplayProps extends PhotoFilter {
+export interface PhotoDisplayProps extends PhotoFilter {
     path: string,
     params?: any,
     page?: string,

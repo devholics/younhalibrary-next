@@ -2,18 +2,10 @@ import { notFound } from 'next/navigation'
 
 import { getCreatorDetail } from '../../_lib/api'
 
-import PhotoDisplay from "@/app/gallery/_components/photo-display";
+import PhotoBoard from "@/app/gallery/_components/photo-board";
 import React, {Suspense} from "react";
 import OrderingMenu from "@/app/gallery/_components/ordering-menu";
 import NavLink from "@/app/gallery/_components/nav-link";
-
-function PhotoDisplayLoading() {
-    return (
-        <div className="text-center py-12">
-            <h3>불러오는 중...</h3>
-        </div>
-    )
-}
 
 export default async function CreatorPhotoGallery({ params, searchParams }: {
     params: {
@@ -40,9 +32,7 @@ export default async function CreatorPhotoGallery({ params, searchParams }: {
                 </div>
                 <OrderingMenu path={path} current={searchParams.order} />
             </div>
-            <Suspense fallback={<PhotoDisplayLoading />}>
-                <PhotoDisplay path={path} page={searchParams.page} order={searchParams.order} creatorId={creator.id} />
-            </Suspense>
+            <PhotoBoard path={path} page={searchParams.page} order={searchParams.order} creatorId={creator.id} />
         </div>
     )
 }
