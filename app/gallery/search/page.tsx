@@ -19,7 +19,7 @@ export default function GallerySearch({ searchParams }: {
     const page = searchParams.page
     const filter = parseQuery(query)
     const path = '/gallery/search'
-    const boardId = `search-${query}-${order || 'default'}-${page}`
+    const boardId = `search-${query}-${order || 'default'}-${page || 1}`
 
     return (
         <main>
