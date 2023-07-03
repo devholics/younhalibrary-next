@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import PhotoDisplay from "@/app/gallery/_components/photo-display";
+import PhotoBoard from "@/app/gallery/_components/photo-board";
 
 import { getTagDetail } from '../../_lib/api'
 import NavLink from "@/app/gallery/_components/nav-link";
@@ -34,9 +34,7 @@ export default async function TagPhotoGallery({ params, searchParams }: {
                 </div>
                 <OrderingMenu path={path} current={searchParams.order} />
             </div>
-            <Suspense fallback={<PhotoDisplayLoading />}>
-                <PhotoDisplay path={path} page={searchParams.page} order={searchParams.order} tags={[tag.id]} />
-            </Suspense>
+            <PhotoBoard path={path} page={searchParams.page} order={searchParams.order} tags={[tag.id]} />
         </div>
     )
 }

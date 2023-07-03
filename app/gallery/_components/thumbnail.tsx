@@ -11,7 +11,7 @@ export default function Thumbnail({ photo }: {
 }) {
     return (
         <div className="relative mb-4">
-            <ThumbnailImage photo={photo} />
+            <ThumbnailImage src={photo.url} width={photo.width || 0} height={photo.height || 0} />
             <div className="opacity-0 hover:opacity-100 ease-in-out duration-150 text-slate-300">
                 <Link href={`/gallery/photos/${photo.id}`}>
                     <div className="absolute inset-0 bg-slate-800/50"></div>

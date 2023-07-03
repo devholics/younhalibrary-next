@@ -33,7 +33,7 @@ export default async function CreatorDetailLayout({ params, children }: {
                     <div className="h-12 xl:h-16"></div>
                     <h1 className="mt-3 font-bold text-slate-800 dark:text-slate-200">{ creator.name }</h1>
                     <div className="flex gap-2 mt-2 text-slate-700 dark:text-slate-300">
-                        { creator.websites.map((website: any, i: number) => <SocialIcon key={i} website={website} />) }
+                        { creator.websites.map((website: any) => <SocialIcon key={website.url} website={website} />) }
                     </div>
                 </div>
             </div>
