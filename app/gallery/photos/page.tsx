@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-
 import Banner from '../_components/banner'
 import Navbar from '../_components/navbar'
 import OrderingMenu from '../_components/ordering-menu'

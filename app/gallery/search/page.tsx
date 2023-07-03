@@ -1,9 +1,7 @@
 import { PhotoFilter } from '../_lib/api'
-import Navbar from "@/app/gallery/_components/navbar";
 import OrderingMenu from "@/app/gallery/_components/ordering-menu";
-import React, {Suspense} from "react";
+import React from "react";
 import PhotoBoard from "@/app/gallery/_components/photo-board";
-import NavLink from "@/app/gallery/_components/nav-link";
 
 import SearchBar from '../_components/search-bar'
 

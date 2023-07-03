@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getCreatorDetail } from '../../_lib/api'
 
 import PhotoBoard from "@/app/gallery/_components/photo-board";
-import React, {Suspense} from "react";
+import React from "react";
 import OrderingMenu from "@/app/gallery/_components/ordering-menu";
 import NavLink from "@/app/gallery/_components/nav-link";
 

@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import React from "react";
 import PhotoBoard from "@/app/gallery/_components/photo-board";
 
 import { getTagDetail } from '../../_lib/api'

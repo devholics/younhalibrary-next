@@ -1,17 +1,6 @@
-import React, {Suspense} from "react";
-import PhotoDisplay from "@/app/gallery/_components/photo-display";
-
 import { getTagDetail } from '../../../_lib/api'
 import NavLink from "@/app/gallery/_components/nav-link";
 import OrderingMenu from "@/app/gallery/_components/ordering-menu";
-
-function PhotoDisplayLoading() {
-    return (
-        <div className="text-center py-12">
-            <h3>불러오는 중...</h3>
-        </div>
-    )
-}
 
 export default async function TagVideoGallery({ params, searchParams }: {
     params: {
